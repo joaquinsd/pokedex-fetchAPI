@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="pokedex.js"></script>
+  <link rel="stylesheet" href="pokedex.css">
+
+  <title>Pokedex</title>
+</head>
+<body>
+  <!-- Pokedex Main Container -->
+  <div class="container center">
+    <h1 class="text-center">My Pokédex</h1>
+    <div id="main-container" class="row justify-content-start"></div>
+    <br>
+    <button id='load' data-more="next" class="btn btn-danger center">Quiero ver más pokémon</button>
+  </div>
+
+
+  <!-- Modal Data Pokemon -->
+  <div class="modal fade" id="pokemon-modal" tabindex="-1" aria-labelledby="pokemonModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="pokemonModal"></h4>
+          <img src="" alt="" id="regular-sprite">
+          <img src="" alt="" id="shiny-sprite">
+        </div>
+        <div class="modal-body">
+          <h5> Types</h5>
+          <ul id="types" class="row justify-content-start ul-types"></ul>
+          <hr>
+          <h5> Generations</h5>
+          <ul id="generations"></ul>
+          <hr>
+          <h5> Abilities</h5>
+          <ul id="abilities" class="row justify-content-start ul-types"></ul>
+          <hr>
+          <h5> First Five Moves</h5>
+          <ol id="moves"></ol>
+      </div>
+        <div class="modal-footer">
+          <button id='close-modal' type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Damage Data -->
+  <div class="modal fade" id="damage-data" tabindex="-1" aria-labelledby="damageModal">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="damageModal"></h4>
+        </div>
+        <div class="modal-body">
+          <h5> Super Effective from:</h5>
+          <ul id="double-from"></ul>
+          <hr>
+          <h5> Not Very Effective from:</h5>
+          <ul id="half-from"></ul>
+          <hr>
+          <h5> No Effect from:</h5>
+          <ul id="inmune-from"></ul>
+          <hr>
+          <h5> Super Effective to:</h5>
+          <ul id="double-to"></ul>
+          <hr>
+          <h5> Not Very Effective to:</h5>
+          <ul id="half-to"></ul>
+          <hr>
+          <h5> No Effect to:</h5>
+          <ul id="inmune-to"></ul>
+        </div>
+        <div class="modal-footer">
+          <button id='back-damage' type="button" class="btn btn-secondary">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Abilities Data -->
+  <div class="modal fade" id="ability-data" tabindex="-1" aria-labelledby="abilityModal">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="abilityModal"></h4>
+        </div>
+        <div class="modal-body">
+          <h5> Pokemon with the same ability:</h5>
+          <ol id="ability-peers"></ol>
+        </div>
+        <div class="modal-footer">
+          <button id='back-abilities' type="button" class="btn btn-secondary">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
